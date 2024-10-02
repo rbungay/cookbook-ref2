@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Add Recipe</title>
   </head>
   <body>
-    <%- include('../partials/_navbar.ejs') %> <br />
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Add a New Recipe</h1>
     <form action="/recipes" method="POST">
       <label for="name">Name:</label>
@@ -15,15 +15,15 @@
       <label for="instructions">Instructions:</label>
       <textarea name="instructions" id="instructions"></textarea>
       <br />
-      <% ingredients.forEach((ingredient)=> { %>
+      <% ingredients.forEach((ingredient) => { %>
       <input
         type="checkbox"
-        id="<% ingredient._id %>"
+        id="<%= ingredient._id %>"
         name="ingredients"
         value="<%= ingredient._id %>"
       />
       <label for="<%= ingredient._id %>"><%= ingredient.name %></label>
-      <% }) %>
+      <% })%>
       <button type="submit">Save Recipe</button>
     </form>
   </body>
